@@ -49,5 +49,5 @@ Sample ReadME created :
     - Email: maxsebok04@gmail.com
     
 
-# Link of deployed project:
+# Link of Github Repository:
  (https://github.com/MS7BOK/readme-creator)
