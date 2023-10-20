@@ -1,19 +1,23 @@
-const inquirer = require('inquirer');
-const fs = require('fs');
-const generateMarkdown = require('./generateMarkdown');
+// Import required modules
+const inquirer = require('inquirer'); // Import the inquirer module for user input
+const fs = require('fs'); // Import the fs module for file system operations
+const generateMarkdown = require('./generateMarkdown'); // Import the custom module for generating markdown content
 
+// Async function to prompt user for input
 async function promptUser() {
+  // Prompt user with a series of questions and validate user input
   const answers = await inquirer.prompt([
     {
       type: 'input',
       name: 'projectTitle',
       message: 'Enter the title of your project:',
       validate: function (input) {
+        // Validation function to ensure project title is not empty
         if (input.length === 0) {
           return 'Project title cannot be empty.';
         }
         return true;
-      },
+      }
     },
     {
       type: 'input',
@@ -63,11 +67,11 @@ async function promptUser() {
 
 
   // Logic to write README to a file
-  fs.writeFile('README.md', readmeContent, err => {
+  fs.writeFile('README.FILE', readmeContent, err => {
     if (err) {
-      console.error('Error writing README.md:', err);
+      console.error('Error writing README.FILE:', err);
     } else {
-      console.log('README.md has been successfully created!');
+      console.log('README.FILE has been successfully created!');
     }
   });
 }
