@@ -58,4 +58,20 @@ async function promptUser() {
     },
   ]);
 
-  
+  // Generate README content based on user responses
+  const readmeContent = generateMarkdown(answers);
+
+
+  // Logic to write README to a file
+  fs.writeFile('README.md', readmeContent, err => {
+    if (err) {
+      console.error('Error writing README.md:', err);
+    } else {
+      console.log('README.md has been successfully created!');
+    }
+  });
+}
+
+
+// Call the function to prompt questions when your script runs.
+promptUser();
