@@ -8,9 +8,9 @@ function generateLicenseBadge(license) {
     } else {
       return ''; // No badge for 'None' option
     }
-  }
+}
   
-  function generateLicenseLink(license) {
+function generateLicenseLink(license) {
     if (license === 'MIT') {
       return '[MIT License](https://opensource.org/licenses/MIT)';
     } else if (license === 'Apache') {
@@ -20,48 +20,48 @@ function generateLicenseBadge(license) {
     } else {
       return 'No license specified';
     }
-  }
+}
   
-  function generateMarkdown(answers) {
-    const licenseBadge = generateLicenseBadge(answers.license);
-    const licenseLink = generateLicenseLink(answers.license);
+function generateMarkdown(answers) {
+  const licenseBadge = generateLicenseBadge(answers.license);
+  const licenseLink = generateLicenseLink(answers.license);
     
-    return `
-    # ${answers.projectTitle}
+  return `
+# ${answers.projectTitle}
   
-    ## Description
-    ${answers.description}
+## Description
+${answers.description}
   
-    ## Table of Contents
-    - [Installation](#installation)
-    - [Usage](#usage)
-    - [License](#license)
-    - [Contributing](#contributing)
-    - [Tests](#tests)
-    - [Questions](#questions)
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [License](#license)
+- [Contributing](#contributing)
+- [Tests](#tests)
+- [Questions](#questions)
   
-    ## Installation
-    ${answers.installation}
+## Installation
+${answers.installation}
   
-    ## Usage
-    ${answers.usage}
+## Usage
+${answers.usage}
   
-    ## License
-    ${licenseBadge}
-    ${licenseLink}
+## License
+${licenseBadge}
+${licenseLink}
   
-    ## Contributing
-    ${answers.contributing}
+## Contributing
+${answers.contributing}
   
-    ## Tests
-    ${answers.tests}
+## Tests
+${answers.tests}
   
-    ## Questions
-    For any questions, please contact me:
-    - GitHub: [${answers.githubUsername}](https://github.com/${answers.githubUsername})
-    - Email: ${answers.email}
-    `;
-  }
+## Questions
+For any questions, please contact me:
+- GitHub: [${answers.githubUsername}](https://github.com/${answers.githubUsername})
+- Email: ${answers.email}
+`;
+}
   
   module.exports = generateMarkdown;
   
