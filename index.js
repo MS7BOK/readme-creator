@@ -67,11 +67,11 @@ async function promptUser() {
 
 
   // Logic to write README to a file
-  fs.writeFile('README.FILE', readmeContent, err => {
+  fs.writeFile('GENERATED_README.md', readmeContent, err => {
     if (err) {
-      console.error('Error writing README.FILE:', err);
+      console.error('Error writing GENERATED_README.md:', err);
     } else {
-      console.log('README.FILE has been successfully created!');
+      console.log('GENERATED_README.md has been successfully created!');
     }
   });
 }
